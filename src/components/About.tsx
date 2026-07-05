@@ -27,7 +27,7 @@ export default function About() {
     ];
 
     return (
-        <section id="about" className="relative py-24 bg-slate-50">
+        <section id="about" className="relative py-24 bg-black/20 border-t border-white/5">
             <div className="max-w-6xl mx-auto px-6">
                 {/* Section Header */}
                 <motion.div
@@ -37,11 +37,11 @@ export default function About() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <span className="text-sm font-medium text-blue-600 tracking-wide uppercase">
+                    <span className="text-sm font-medium text-zinc-400 tracking-wide uppercase">
                         About Me
                     </span>
                     <h2
-                        className="heading-lg mt-2"
+                        className="heading-lg mt-2 text-white"
                         style={{ fontFamily: "var(--font-instrument-serif)" }}
                     >
                         Where Logic Meets Creativity
@@ -50,7 +50,7 @@ export default function About() {
 
                 {/* Bio + Image */}
                 <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-                    {/* Image Placeholder */}
+                    {/* Image */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -58,23 +58,22 @@ export default function About() {
                         transition={{ duration: 0.6 }}
                         className="relative"
                     >
-                        <div className="aspect-square bg-gradient-to-br from-blue-100 to-rose-100 rounded-2xl flex items-center justify-center border border-slate-200 overflow-hidden">
-                            {/* Replaced placeholder with actual image */}
+                        <div className="aspect-square bg-white/5 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/10 overflow-hidden">
                             <img
                                 src="/profile.jpg"
                                 alt="Abhiman Bhat"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover grayscale brightness-95"
                             />
                         </div>
-                        {/* Decorative Element */}
-                        <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-xl -z-10" />
+                        {/* Decorative Element (Glass Sheet) */}
+                        <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/10 border border-white/20 backdrop-blur-md rounded-xl -z-10" />
                     </motion.div>
 
                     {/* Bio Text */}
                     <div className="space-y-6">
                         {/* Intro */}
-                        <div className="text-lg leading-relaxed text-slate-600">
-                            <ScrollFloat className="inline-flex text-slate-800 font-semibold" animationDuration={0.8} stagger={0.03}>
+                        <div className="text-lg leading-relaxed text-zinc-400">
+                            <ScrollFloat className="inline-flex text-white font-semibold" animationDuration={0.8} stagger={0.03}>
                                 Hi, I'm Abhiman Bhat,
                             </ScrollFloat>
                             <ScrollFloat className="inline-flex ml-2" animationDuration={0.8} stagger={0.01}>
@@ -83,7 +82,7 @@ export default function About() {
                         </div>
 
                         <ScrollFloat
-                            className="text-lg leading-relaxed text-slate-600"
+                            className="text-lg leading-relaxed text-zinc-400"
                             animationDuration={0.6}
                             stagger={0.015}
                         >
@@ -91,7 +90,7 @@ export default function About() {
                         </ScrollFloat>
 
                         <ScrollFloat
-                            className="text-lg leading-relaxed text-slate-600"
+                            className="text-lg leading-relaxed text-zinc-400"
                             animationDuration={0.6}
                             stagger={0.015}
                         >
@@ -109,15 +108,15 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition-shadow"
+                            className="glass-panel glass-panel-hover p-6 rounded-xl"
                         >
-                            <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                                <item.icon size={24} className="text-blue-600" />
+                            <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mb-4">
+                                <item.icon size={24} className="text-white" />
                             </div>
-                            <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                            <h3 className="text-lg font-semibold text-white mb-2">
                                 {item.title}
                             </h3>
-                            <p className="text-slate-600 text-sm leading-relaxed">
+                            <p className="text-zinc-400 text-sm leading-relaxed">
                                 {item.description}
                             </p>
                         </motion.div>

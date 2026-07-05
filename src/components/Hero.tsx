@@ -8,11 +8,11 @@ export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Grid */}
-            <div className="absolute inset-0 bg-grid opacity-50" />
+            <div className="absolute inset-0 bg-grid opacity-30" />
 
-            {/* Gradient Blobs */}
-            <div className="gradient-blob blob-blue absolute top-20 -left-20 w-96 h-96" />
-            <div className="gradient-blob blob-rose absolute bottom-20 -right-20 w-80 h-80" />
+            {/* Gradient Blobs (Monochromatic) */}
+            <div className="gradient-blob blob-white absolute top-20 -left-20 w-96 h-96" />
+            <div className="gradient-blob blob-gray absolute bottom-20 -right-20 w-80 h-80" />
 
             {/* Content */}
             <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -21,10 +21,10 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-8"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"
                 >
-                    <Sparkles size={16} className="text-blue-600" />
-                    <span className="text-sm text-blue-700 font-medium">
+                    <Sparkles size={16} className="text-white" />
+                    <span className="text-sm text-zinc-300 font-medium">
                         Open to Opportunities
                     </span>
                 </motion.div>
@@ -35,17 +35,17 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
                 >
-                    <span className="block text-slate-500 font-medium mb-2 tracking-wide">
+                    <span className="block text-zinc-500 font-medium mb-2 tracking-wide">
                         Hi, I&apos;m
                     </span>
                     <h1
-                        className="text-5xl md:text-7xl lg:text-8xl font-medium text-slate-900 mb-6 tracking-tight"
+                        className="text-5xl md:text-7xl lg:text-8xl font-medium text-white mb-6 tracking-tight"
                         style={{ fontFamily: "var(--font-instrument-serif)" }}
                     >
                         Abhiman Bhat
                     </h1>
-                    <h2 className="text-2xl md:text-4xl font-light text-slate-500 mb-8">
-                        Data-Driven <span className="text-blue-600 font-normal">Problem Solver.</span>
+                    <h2 className="text-2xl md:text-4xl font-light text-zinc-400 mb-8">
+                        Data-Driven <span className="text-white font-normal underline decoration-white/30 underline-offset-8">Problem Solver.</span>
                     </h2>
                 </motion.div>
 
@@ -54,7 +54,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed"
+                    className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
                     I transform complex datasets into <strong>actionable insights</strong> using{" "}
                     <strong>Power BI, Excel, and SQL</strong>. From market analysis to revenue modeling,
@@ -70,13 +70,13 @@ export default function Hero() {
                 >
                     <Link
                         href="#projects"
-                        className="bg-slate-800 text-white px-6 py-3 rounded-xl font-medium hover:bg-slate-700 transition-all hover:scale-105 shadow-lg"
+                        className="btn-white text-center w-full sm:w-auto px-6 py-3 rounded-xl font-medium transition-all hover:scale-105 shadow-lg"
                     >
                         View My Work
                     </Link>
                     <Link
                         href="#contact"
-                        className="text-slate-700 px-6 py-3 rounded-xl font-medium border border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all"
+                        className="btn-glass text-center w-full sm:w-auto px-6 py-3 rounded-xl font-medium transition-all hover:scale-105 hover:bg-white/10"
                     >
                         Get In Touch
                     </Link>
@@ -96,13 +96,10 @@ export default function Hero() {
                         "SQL",
                         "Excel",
                         "Python",
-                    ].map((role, index) => (
+                    ].map((role) => (
                         <span
                             key={role}
-                            className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${index < 3
-                                ? "border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100"
-                                : "border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100"
-                                }`}
+                            className="glass-pill px-4 py-2 text-sm font-medium"
                         >
                             {role}
                         </span>
@@ -121,7 +118,7 @@ export default function Hero() {
                     animate={{ y: [0, 8, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                    <ArrowDown size={24} className="text-slate-400" />
+                    <ArrowDown size={24} className="text-zinc-500 hover:text-white transition-colors" />
                 </motion.div>
             </motion.div>
         </section>

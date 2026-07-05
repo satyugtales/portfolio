@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function Contact() {
@@ -14,7 +14,7 @@ export default function Contact() {
         },
         {
             name: "Phone",
-            icon: Mail, // Using Mail icon temporarily, should ideally be Phone
+            icon: Phone,
             href: "tel:+918197463369",
             label: "+91-8197463369",
         },
@@ -33,7 +33,7 @@ export default function Contact() {
     ];
 
     return (
-        <section id="contact" className="py-24 bg-white">
+        <section id="contact" className="py-24 bg-black/5 border-t border-white/5">
             <div className="max-w-4xl mx-auto px-6">
                 {/* Section Header */}
                 <motion.div
@@ -43,16 +43,16 @@ export default function Contact() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <span className="text-sm font-medium text-blue-600 tracking-wide uppercase">
+                    <span className="text-sm font-medium text-zinc-400 tracking-wide uppercase">
                         Get In Touch
                     </span>
                     <h2
-                        className="heading-lg mt-2 mb-4"
+                        className="heading-lg mt-2 mb-4 text-white"
                         style={{ fontFamily: "var(--font-instrument-serif)" }}
                     >
                         Let&apos;s Build Something Together
                     </h2>
-                    <p className="text-slate-600 max-w-xl mx-auto">
+                    <p className="text-zinc-400 max-w-xl mx-auto">
                         I&apos;m currently seeking opportunities as a Business Analyst or
                         Data Analyst intern. Let&apos;s connect if you&apos;re looking for someone
                         who can transform data into strategic insights!
@@ -66,23 +66,23 @@ export default function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="bg-slate-50 p-8 rounded-2xl border border-slate-200"
+                        className="glass-panel p-8 rounded-2xl"
                     >
-                        <h3 className="text-xl font-semibold text-slate-800 mb-6">Send a Message</h3>
+                        <h3 className="text-xl font-semibold text-white mb-6">Send a Message</h3>
                         <form action="mailto:abhimansbhat18@gmail.com" method="post" encType="text/plain" className="space-y-4">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Name</label>
-                                <input type="text" id="name" name="name" required className="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" />
+                                <label htmlFor="name" className="block text-sm font-medium text-zinc-400 mb-1">Name</label>
+                                <input type="text" id="name" name="name" required className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-white/20 focus:border-white/30 outline-none transition-all" />
                             </div>
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                <input type="email" id="email" name="email" required className="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" />
+                                <label htmlFor="email" className="block text-sm font-medium text-zinc-400 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-white/20 focus:border-white/30 outline-none transition-all" />
                             </div>
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                                <textarea id="message" name="message" rows={4} required className="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"></textarea>
+                                <label htmlFor="message" className="block text-sm font-medium text-zinc-400 mb-1">Message</label>
+                                <textarea id="message" name="message" rows={4} required className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white focus:ring-2 focus:ring-white/20 focus:border-white/30 outline-none transition-all"></textarea>
                             </div>
-                            <button type="submit" className="w-full bg-slate-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-700 transition-colors flex items-center justify-center gap-2">
+                            <button type="submit" className="w-full bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
                                 <Send size={18} />
                                 Send Message
                             </button>
@@ -103,14 +103,14 @@ export default function Contact() {
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-100 hover:border-blue-100 hover:shadow-md transition-all group"
+                                className="flex items-center gap-4 p-4 rounded-xl glass-panel glass-panel-hover group"
                             >
-                                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-colors">
                                     <social.icon size={20} />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-slate-500 font-medium">{social.name}</p>
-                                    <p className="text-slate-800 font-medium group-hover:text-blue-600 transition-colors">{social.label}</p>
+                                    <p className="text-sm text-zinc-500 font-medium">{social.name}</p>
+                                    <p className="text-zinc-300 font-medium group-hover:text-white transition-colors">{social.label}</p>
                                 </div>
                             </Link>
                         ))}
